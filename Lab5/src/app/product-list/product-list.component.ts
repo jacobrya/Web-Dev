@@ -1,7 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app.routes';
 @Component({
   selector: 'app-product-list',
   standalone: true,
@@ -18,9 +19,5 @@ export class ProductListComponent {
     if (this.categoryId !== null) {
       this.removeProduct.emit({ categoryId: this.categoryId, productId });
     }
-  }
-
-  onLikeProduct(product: any) {
-    product.likes++;
   }
 }
