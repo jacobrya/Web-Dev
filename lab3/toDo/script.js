@@ -1,17 +1,25 @@
 let addToDoButton = document.getElementById('addToDo');
-let toDoContainer = document.getElementById('toDoContainer');
 let inputField = document.getElementById('inputField');
+let pendingTasks = document.getElementById('pendingTasks');
+let completedTasks = document.getElementById('completedTasks');
 
-addToDoButton.addEventListener('click', function(){
-    var paragraph = document.createElement('p');
-    paragraph.classList.add('paragraph-styling');
-    paragraph.innerText = inputField.value;
-    toDoContainer.appendChild(paragraph);
+addToDoButton.addEventListener('click', function () {
+    if (inputField.value.trim() === "") return;
+
+    let task = document.createElement('p');
+    task.classList.add('paragraph-styling');
+    task.innerText = inputField.value;
+    pendingTasks.appendChild(task);
     inputField.value = "";
-    paragraph.addEventListener('click', function(){
-        paragraph.style.textDecoration = "line-through";
-    })
-    paragraph.addEventListener('dblclick', function(){
-        toDoContainer.removeChild(paragraph);
-    })
-})
+
+    // Перемещение в "Выполненные" при клике
+    task.addEventListener('click', function () {
+        task.classList.add('completed');
+        completedTasks.appendChild(task);
+    });
+
+    // Удаление из "Выполненных" при двойном клике
+    task.addEventListener('dblclick', function () {
+        completedTasks.removeChild(task);
+    });
+});

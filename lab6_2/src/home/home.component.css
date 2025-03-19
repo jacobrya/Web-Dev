@@ -1,0 +1,27 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 20px;
+    background: #222;
+    border-radius: 10px;;
+    min-height: 100vh;
+  }
+  
+  .homepage a {
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 15px;
+  }
+  
+  .homepage a:hover {
+    background: #666;
+  }
+  
+  .homepage a:active {
+    background: #888;
+  }
