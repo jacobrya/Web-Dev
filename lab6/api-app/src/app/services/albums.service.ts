@@ -12,7 +12,7 @@ export class AlbumsService {
   private http = inject(HttpClient);
 
   getAlbums(): Observable<Album[]> {
-    return this.http.get<Album[]>(this.apiUrl);
+  return this.http.get<Album[]>(this.apiUrl);
   }
 
   getAlbumById(id: number): Observable<Album> {

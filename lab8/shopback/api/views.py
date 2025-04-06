@@ -34,3 +34,6 @@ def category_products(request, id):
         return JsonResponse(result, safe=False)
     except CategoryModel.DoesNotExist:
         return JsonResponse({'error': 'Category not found'}, status=404)
+    
+
+
